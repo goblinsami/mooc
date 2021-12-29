@@ -1,0 +1,15 @@
+<a style="margin-left: 0" class="text-muted mt-5 menu-toggle d-md-none" id="" href=""><i style="font-size: 30px"id="open-btn" class="fas fa-chevron-circle-left"></i></i></a>
+<div id="sidebar-wrapper">
+  <ul class="sidebar-nav">
+    <li class="sidebar-brand d-flex justify-content-between">
+      <i style="cursor: pointer" class="fas fa-user-graduate menu-toggle"></i>
+    </li>
+    <% @courses.each do |course| %>
+      <li class="menu-item">
+        <%= link_to course, remote: true, data: {action: 'ajax:success->menu#replace'}  do %>
+          <%= course.title %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>

@@ -1,0 +1,10 @@
+<div class="d-flex justify-content-center pt-3">
+  <% if @course.file.length == 171 %>
+    <% url = @course.file.gsub(/(<iframe).{38}/, '').gsub(/.(preview).{90}/, '') %>
+  <% else %>
+    <% url = @course.file.gsub(/(<iframe).{38}/, '').gsub(/.(preview).{53}/, '') %>
+  <% end %>
+  <h1> <% @course.file.length %>  <% url.length %></h1>
+  <span class="text-warning"></span>
+  <iframe src="https://drive.google.com/file/d/<%="#{url}"%>/preview?resourcekey=0-fqT9rWYnkg3DIyEV4aNbtw" width="320" height="240" allow="autoplay"></iframe>
+</div>

@@ -1,0 +1,8 @@
+<% course = local_assigns[:course] %>
+<div class="container pt-md-5">
+  <div class="card p-5">
+  <%= render('course_tabs', course: @course) %>
+  <%= render('course_content', course: @course) %>
+  </div>
+</div>
+<div style="overflow-x: auto" class="row mt-4 mt-md-5 flex-nowrap flex-md-wrap">

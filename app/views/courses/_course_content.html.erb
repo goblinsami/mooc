@@ -1,0 +1,26 @@
+   <% course = local_assigns[:course] %>
+    <div class="tab-content" id="nav-tabContent">
+  <% @greeting = capture do %>
+  Welcome to the Mooc of the AEPJ
+<% end %>
+  <% @greeting2 = capture do %>
+   Visit all the trainings available in the navbar
+<% end %>
+      <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+      <div class="d-flex">
+          <h1 class="h2 font-weight-bold"> <%= @course.present? ? @course&.title : @greeting %></h2>
+        </div>
+          <h3><%= @greeting2 if !@course.present?  %></h3>
+        <div class="container-fluid">
+          <% if @course.present? %>
+            <%= render('video') %>
+          <% end %>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+        <p class="text-warning"><%= @course&.content %></p>
+      </div>
+      <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+        <p class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur similique, aspernatur quidem sapiente doloremque sequi deleniti minima excepturi veniam impedit officiis nobis eos molestiae sunt unde velit quaerat in perspiciatis.</p>
+      </div>
+    </div>
