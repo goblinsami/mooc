@@ -1,7 +1,9 @@
 <% course = local_assigns[:course] %>
 <div class="container pt-md-5">
   <div class="card p-5">
-  <%= render('course_tabs', course: @course) %>
+  <% if @course.present? %>
+   <%= render('course_tabs', course: @course) %>
+  <% end %>
   <%= render('course_content', course: @course) %>
   </div>
 </div>

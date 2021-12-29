@@ -6,3 +6,8 @@ $(".menu-toggle").click(function(e) {
   $(".fa-user-graduate").toggleClass("d-block")
 
 });
+
+$(".menu-item").click(function(e) {
+ e.preventDefault();
+  $("#wrapper").removeClass("toggled");
+});
